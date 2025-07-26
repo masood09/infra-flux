@@ -54,7 +54,6 @@ metadata:
 
 spec:
   dependsOn:
-    - name: infra-secrets
     - name: infra-controllers
   interval: 1h
   retryInterval: 1m
@@ -64,4 +63,3 @@ spec:
     name: flux-system
   path: ./infrastructure/configs/homelab-staging/
   prune: true
-  wait: true

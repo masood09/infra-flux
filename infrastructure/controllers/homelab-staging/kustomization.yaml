@@ -5,3 +5,4 @@ kind: Kustomization
 resources:
   - "../base/flux/alert-discord/"
   - "../base/flux/alert-github/"
+  - "../base/metallb-system/metallb/"
