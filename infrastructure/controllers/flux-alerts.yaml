@@ -24,6 +24,6 @@ metadata:
 
 spec:
   type: github
-  address: https://github.com/masood09/infra-tofu
+  address: https://github.com/masood09/infra-flux
   secretRef:
     name: github-alert-api-token
