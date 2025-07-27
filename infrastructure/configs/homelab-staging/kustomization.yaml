@@ -6,4 +6,5 @@ resources:
   - "../base/metallb-system/metallb/"
   - "../../secrets/homelab-staging/cf-token.enc.yaml"
   - "../base/cert-manager/"
+  - "../../secrets/homelab-staging/traefik-dashboard-auth.enc.yaml"
   - "../base/traefik/"
