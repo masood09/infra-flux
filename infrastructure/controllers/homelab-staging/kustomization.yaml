@@ -9,3 +9,4 @@ resources:
   - "../base/flux/alert-github/"
   - "../base/metallb-system/metallb/"
   - "../base/traefik/"
+  - "../base/cert-manager/"
