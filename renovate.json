@@ -4,9 +4,12 @@
     "config:recommended"
   ],
   "flux": {
-    "fileMatch": ["\\.yaml$"]
+    managerFilePatterns: ["\\.ya?ml$"]
+  },
+  "helm-values": {
+    managerFilePatterns: ["\\.ya?ml$/"]
   },
   "kubernetes": {
-    "fileMatch": ["\\.yaml$"]
+    managerFilePatterns: ["\\.ya?ml$"]
   }
 }
