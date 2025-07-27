@@ -4,6 +4,7 @@ apiVersion: source.toolkit.fluxcd.io/v1
 kind: OCIRepository
 metadata:
   name: cert-manager
+  namespace: cert-manager
 spec:
   interval: 5m
   layerSelector:
@@ -19,6 +20,7 @@ kind: HelmRelease
 
 metadata:
   name: cert-manager
+  namespace: cert-manager
 
 spec:
   chart:
