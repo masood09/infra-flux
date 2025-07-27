@@ -8,3 +8,4 @@ resources:
   - "../../secrets/homelab-staging/githubtoken.enc.yaml"
   - "../base/flux/alert-github/"
   - "../base/metallb-system/metallb/"
+  - "../base/traefik/"
