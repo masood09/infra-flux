@@ -4,7 +4,7 @@ kind: Certificate
 
 metadata:
   name: local-mantannest-com
-  namespace: default
+  namespace: traefik
 
 spec:
   secretName: local-mantannest-com-tls
