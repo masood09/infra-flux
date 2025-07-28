@@ -16,12 +16,8 @@ spec:
         name: democratic-csi
         namespace: flux-system
       version: 0.3.0
-  releaseName: democratic-csi
+  releaseName: snapshot-controller
   targetNamespace: democratic-csi
-  upgrade:
-    cleanupOnFail: true
-    remediation:
-      retries: 3
 
 
 ---
@@ -44,10 +40,6 @@ spec:
       version: 0.15.0
   releaseName: democratic-csi
   targetNamespace: democratic-csi
-  upgrade:
-    cleanupOnFail: true
-    remediation:
-      retries: 3
   values:
     controller:
       driver:
