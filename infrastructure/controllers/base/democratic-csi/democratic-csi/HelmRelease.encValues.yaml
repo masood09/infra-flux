@@ -35,8 +35,6 @@ metadata:
   name: democratic-csi
   namespace: democratic-csi
 spec:
-  dependsOn:
-    - name: snapshot-controller
   interval: 1h
   chart:
     spec:
