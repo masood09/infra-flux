@@ -6,7 +6,7 @@ metadata:
   name: snapshot-controller
   namespace: democratic-csi
 spec:
-  interval: 1h
+  interval: 1m
   chart:
     spec:
       chart: snapshot-controller
@@ -28,7 +28,7 @@ metadata:
   name: democratic-csi
   namespace: democratic-csi
 spec:
-  interval: 1h
+  interval: 1m
   chart:
     spec:
       chart: democratic-csi
