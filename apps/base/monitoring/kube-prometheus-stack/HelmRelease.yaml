@@ -15,6 +15,10 @@ spec:
         name: prometheus-community
       version: 75.10.0
   interval: 1h
+  valuesFrom:
+    - kind: ConfigMap
+      name: kube-state-metrics-config
+      valuesKey: kube-state-metrics-config.yaml
   values:
     fullnameOverride: prometheus # changed
     defaultRules:
