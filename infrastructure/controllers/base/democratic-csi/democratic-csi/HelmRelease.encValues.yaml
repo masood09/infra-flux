@@ -18,9 +18,6 @@ spec:
       version: 0.3.0
   releaseName: democratic-csi
   targetNamespace: democratic-csi
-  install:
-    remediation:
-      retries: -1
   upgrade:
     cleanupOnFail: true
     remediation:
@@ -47,9 +44,6 @@ spec:
       version: 0.15.0
   releaseName: democratic-csi
   targetNamespace: democratic-csi
-  install:
-    remediation:
-      retries: -1
   upgrade:
     cleanupOnFail: true
     remediation:
