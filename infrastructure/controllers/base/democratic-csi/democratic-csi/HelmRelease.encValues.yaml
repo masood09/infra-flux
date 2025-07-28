@@ -75,7 +75,7 @@ spec:
           - noatime
           - nfsvers=4
     volumeSnapshotClasses:
-      - name: truenas
+      - name: truenas-nfs
 sops:
   age:
     - recipient: age1s90xwvtqw9at892s8tyde9lp8vu3rs2lde7pwh7hayuc2sahmv6qmkwpff
