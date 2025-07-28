@@ -5,4 +5,4 @@ kind: Kustomization
 
 resources:
   - "./HelmRepository.yaml"
-  - "./HelmRelease.encValues.yaml"
+  # - "./HelmRelease.encValues.yaml"
