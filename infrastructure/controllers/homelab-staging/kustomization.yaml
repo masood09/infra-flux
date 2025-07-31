@@ -4,6 +4,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
+  - "../base/flux-system/flux-operator/"
   - "../../secrets/homelab-staging/discord-webhook.enc.yaml"
   - "../base/flux-system/alert-discord/"
   - "../../secrets/homelab-staging/githubtoken.enc.yaml"
