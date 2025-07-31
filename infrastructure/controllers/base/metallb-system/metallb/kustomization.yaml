@@ -7,3 +7,5 @@ namespace: metallb-system
 
 resources:
   - github.com/metallb/metallb/config/native?ref=v0.15.2
+  - "./CRD_IPAddressPool.yaml"
+  - "./CRD_L2Advertisement.yaml"
