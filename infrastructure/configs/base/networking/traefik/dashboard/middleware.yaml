@@ -4,7 +4,7 @@ kind: Middleware
 
 metadata:
   name: traefik-dashboard-basicauth
-  namespace: traefik
+  namespace: networking
 
 spec:
   basicAuth:
