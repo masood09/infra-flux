@@ -20,7 +20,7 @@ spec:
         namespace: flux-system
       version: v1.18.2
 
-  releaseName: networking
+  releaseName: cert-manager
   targetNamespace: networking
 
   values:
