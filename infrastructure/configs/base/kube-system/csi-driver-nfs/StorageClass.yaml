@@ -9,15 +9,14 @@ provisioner: nfs.csi.k8s.io
 
 parameters:
   server: nas-server.local.mantannest.com
-  share: /mnt/DataStore/k8s/homelab-staging/
-  subDir: /
+  share: /mnt/DataStore/k8s/homelab-staging
   # csi.storage.k8s.io/provisioner-secret is only needed for providing mountOptions in DeleteVolume
   # csi.storage.k8s.io/provisioner-secret-name: "mount-options"
   # csi.storage.k8s.io/provisioner-secret-namespace: "default"
 
 reclaimPolicy: Delete
 volumeBindingMode: Immediate
-allowVolumeExpansion: true
+# allowVolumeExpansion: true
 
 mountOptions:
   - nfsvers=4.2

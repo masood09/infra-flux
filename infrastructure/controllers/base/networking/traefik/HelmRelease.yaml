@@ -23,7 +23,7 @@ spec:
       checkNewVersion: false
     additionalArguments:
       - "--serversTransport.insecureSkipVerify=true"
-      - "--log.level=INFO"
+      - "--log.level=DEBUG"
     deployment:
       enabled: true
       replicas: 1
@@ -70,3 +70,8 @@ spec:
         loadBalancerIP: 10.0.20.170
       loadBalancerSourceRanges: []
       externalIPs: []
+    metrics:
+      prometheus:
+        enabled: true
+        addRoutersLabels: true
+        addServicesLabels: true

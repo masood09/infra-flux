@@ -66,7 +66,7 @@ spec:
         storage:
           volumeClaimTemplate:
             spec:
-              storageClassName: truenas-nfs
+              storageClassName: nfs-csi
               accessModes: ["ReadWriteOnce"]
               resources:
                 requests:
@@ -80,9 +80,9 @@ spec:
       persistence: # changed
         enabled: true
         type: pvc
-        storageClassName: truenas-nfs
+        storageClassName: nfs-csi
         accessModes: ["ReadWriteOnce"]
-        size: 20Gi
+        size: 1Gi
     kubeEtcd:
       enabled: true
       endpoints: # changed
@@ -99,17 +99,6 @@ spec:
       enabled: true
       endpoints: # changed
         - 10.0.20.111
-    kube-state-metrics:
-      prometheus:
-        monitor:
-          enabled: true
-          relabelings: # changed
-            - action: replace
-              regex: (.*)
-              replacement: $1
-              sourceLabels:
-                - __meta_kubernetes_pod_node_name
-              targetLabel: kubernetes_node
     prometheus:
       enabled: true
       prometheusSpec:
@@ -124,11 +113,11 @@ spec:
         storageSpec: # changed
           volumeClaimTemplate:
             spec:
-              storageClassName: truenas-nfs
+              storageClassName: nfs-csi
               accessModes: ["ReadWriteOnce"]
               resources:
                 requests:
-                  storage: 50Gi
+                  storage: 1Gi
     prometheusOperator:
       enabled: true
       prometheusConfigReloader: # changed
