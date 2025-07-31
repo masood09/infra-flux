@@ -1,9 +1,5 @@
 ---
 creation_rules:
-  - path_regex: ./.*/*.encValues.ya?ml
-    encrypted_regex: (apiKey)
-    age: age1s90xwvtqw9at892s8tyde9lp8vu3rs2lde7pwh7hayuc2sahmv6qmkwpff
-    mac_only_encrypted: true
   - path_regex: ./.*/*.enc.ya?ml
     encrypted_regex: ^(data|stringData)$
     age: age1s90xwvtqw9at892s8tyde9lp8vu3rs2lde7pwh7hayuc2sahmv6qmkwpff

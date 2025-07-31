@@ -11,4 +11,3 @@ resources:
   - "../base/metallb-system/metallb/"
   - "../base/traefik/"
   - "../base/cert-manager/"
-  # - "../base/democratic-csi/"
