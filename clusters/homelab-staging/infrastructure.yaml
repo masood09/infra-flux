@@ -8,6 +8,8 @@ metadata:
   namespace: flux-system
 
 spec:
+  dependsOn:
+    - name: bootstrap
   interval: 1h
   retryInterval: 1m
   timeout: 5m
