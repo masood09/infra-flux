@@ -10,5 +10,4 @@ resources:
   - "../../secrets/homelab-staging/githubtoken.enc.yaml"
   - "../base/flux-system/alert-github/"
   - "../base/kube-system/"
-  # - "../base/metallb-system/metallb/"
   # - "../base/networking/"
