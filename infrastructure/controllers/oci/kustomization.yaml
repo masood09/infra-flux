@@ -1,0 +1,13 @@
+---
+# yaml-language-server: $schema=https://json.schemastore.org/kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  # - "../base/flux-system/flux-operator/"
+  - "../../secrets/oci/discord-webhook.enc.yaml"
+  - "../base/flux-system/alert-discord/"
+  - "../../secrets/oci/githubtoken.enc.yaml"
+  - "../base/flux-system/alert-github/"
+  # - "../base/kube-system/"
+  # - "../base/networking/"
