@@ -9,5 +9,5 @@ resources:
   - "../base/flux-system/alert-discord/"
   - "../../secrets/oci/githubtoken.enc.yaml"
   - "../base/flux-system/alert-github/"
-  # - "../base/kube-system/"
+  - "../base/kube-system/"
   # - "../base/networking/"
