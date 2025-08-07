@@ -8,15 +8,13 @@ metadata:
   namespace: flux-system
 
 spec:
-  dependsOn:
-    - name: bootstrap
   interval: 1h
   retryInterval: 1m
   timeout: 5m
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/controllers/oci/
+  path: ./infrastructure/controllers/oci-production/
   decryption:
     provider: sops
     secretRef:
@@ -43,7 +41,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/configs/oci/
+  path: ./infrastructure/configs/oci-production/
   decryption:
     provider: sops
     secretRef:

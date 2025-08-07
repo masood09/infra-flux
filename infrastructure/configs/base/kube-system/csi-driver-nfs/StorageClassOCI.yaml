@@ -8,7 +8,7 @@ metadata:
 provisioner: nfs.csi.k8s.io
 
 parameters:
-  server: vm-01.publicsubnet.k8svcn.oraclevcn.com
+  server: mensah.publicsubnet.ocivcn.oraclevcn.com
   share: /
   subDir: /${pvc.metadata.namespace}/${pvc.metadata.name}
 

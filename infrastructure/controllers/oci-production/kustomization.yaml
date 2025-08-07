@@ -5,9 +5,9 @@ kind: Kustomization
 
 resources:
   # - "../base/flux-system/flux-operator/"
-  - "../../secrets/oci/discord-webhook.enc.yaml"
+  - "../../secrets/oci-production/discord-webhook.enc.yaml"
   - "../base/flux-system/alert-discord/"
-  - "../../secrets/oci/githubtoken.enc.yaml"
+  - "../../secrets/oci-production/githubtoken.enc.yaml"
   - "../base/flux-system/alert-github/"
   - "../base/kube-system/"
   # - "../base/networking/"
