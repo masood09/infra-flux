@@ -10,4 +10,5 @@ resources:
   # - "../base/networking/"
 
 patches:
-  - path: "./patches/delete-oci-storageclass.yaml"
+  - path: "./patches/delete-homelab-backedup-storageclass.yaml"
+  - path: "./patches/delete-homelab-nonbackedup-storageclass.yaml"
