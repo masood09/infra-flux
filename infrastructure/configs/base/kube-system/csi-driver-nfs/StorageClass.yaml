@@ -3,13 +3,13 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 
 metadata:
-  name: nfs-backedup-csi
+  name: nfs-staging-backedup-csi
 
 provisioner: nfs.csi.k8s.io
 
 parameters:
   server: nas-server.local.mantannest.com
-  share: /mnt/DataStore/k8s/backedup/homelab-staging
+  share: /mnt/DataStore/Backedup/K8S/homelab-staging
   subDir: /${pvc.metadata.namespace}/${pvc.metadata.name}
 
 reclaimPolicy: Delete
@@ -25,13 +25,13 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 
 metadata:
-  name: nfs-nonbackedup-csi
+  name: nfs-staging-nonbackedup-csi
 
 provisioner: nfs.csi.k8s.io
 
 parameters:
   server: nas-server.local.mantannest.com
-  share: /mnt/DataStore/k8s/nonbackedup/homelab-staging
+  share: /mnt/DataStore/NonBackedUp/K8S/homelab-staging
   subDir: /${pvc.metadata.namespace}/${pvc.metadata.name}
 
 reclaimPolicy: Delete
