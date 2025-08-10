@@ -7,8 +7,22 @@ resources:
   - "../../secrets/homelab-staging/cf-token.enc.yaml"
   - "../../secrets/homelab-staging/traefik-dashboard-auth.enc.yaml"
   - "../base/kube-system/"
-  # - "../base/networking/"
+  - "../base/networking/"
 
 patches:
   - path: "./patches/delete-homelab-backedup-storageclass.yaml"
   - path: "./patches/delete-homelab-nonbackedup-storageclass.yaml"
+  - path: "./patches/delete-traefik-staging-homelab-cert.yaml"
+  - target:
+      group: cert-manager.io
+      version: v1
+      kind: ClusterIssuer
+      name: letsencrypt
+    path: "./patches/letsencrypt-use-production.yaml"
+  - target:
+      group: traefik.io
+      version: v1alpha1
+      kind: IngressRoute
+      name: traefik-dashboard
+      namespace: networking
+    path: "./patches/traefik-dashboard-change-route-name.yaml"

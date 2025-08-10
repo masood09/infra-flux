@@ -5,5 +5,5 @@ kind: Kustomization
 
 resources:
   - "./defaultHeaders.yaml"
-  - "./ServiceMonitor.yaml"
+  # - "./ServiceMonitor.yaml"
   - "./dashboard/"

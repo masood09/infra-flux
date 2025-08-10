@@ -8,7 +8,7 @@ metadata:
 spec:
   acme:
     server: https://acme-staging-v02.api.letsencrypt.org/directory
-    email: letsencrypt@ahmedmasood.com
+    email: letsencrypt@mantannest.com
 
     privateKeySecretRef:
       name: letsencrypt

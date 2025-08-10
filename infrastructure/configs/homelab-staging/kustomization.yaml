@@ -11,3 +11,4 @@ resources:
 
 patches:
   - path: "./patches/delete-oci-storageclass.yaml"
+  # - path: "./patches/delete-oci-cert.yaml"

@@ -1,0 +1,16 @@
+- op: replace
+  path: /spec/values/additionalArguments
+  value:
+    - "--serversTransport.insecureSkipVerify=true"
+
+- op: replace
+  path: /spec/values/deployment/replicas
+  value: 3
+
+- op: remove
+  path: /spec/values/service/spec
+
+- op: replace
+  path: /spec/values/service/annotations
+  value:
+     oci.oraclecloud.com/load-balancer-type: nlb
