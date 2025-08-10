@@ -65,6 +65,6 @@ spec:
       annotations: {}
       labels: {}
       spec:
-        loadBalancerIP: 10.0.20.170
+        loadBalancerIP: 10.0.20.160
       loadBalancerSourceRanges: []
       externalIPs: []

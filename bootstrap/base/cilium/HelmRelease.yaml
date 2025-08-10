@@ -27,6 +27,8 @@ spec:
     ipam:
       mode: "kubernetes"
     kubeProxyReplacement: true
+    bgpControlPlane:
+      enabled: true
     securityContext:
       capabilities:
         ciliumAgent:
