@@ -6,4 +6,5 @@ kind: Kustomization
 resources:
   - "./HelmRepository.yaml"
   - "./HelmRelease.yaml"
+  - "./l2advertisement.yaml"
   - "./IPPool.yaml"

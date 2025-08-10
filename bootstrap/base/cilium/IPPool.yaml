@@ -3,7 +3,7 @@ apiVersion: "cilium.io/v2"
 kind: CiliumLoadBalancerIPPool
 
 metadata:
-  name: "ip-pool"
+  name: "default-pool"
 
 spec:
   blocks:
