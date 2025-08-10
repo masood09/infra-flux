@@ -12,7 +12,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`traefik.local.mantannest.com`)
+    - match: Host(`traefik.staging.homelab.mantannest.com`)
       kind: Rule
       middlewares:
         - name: traefik-dashboard-basicauth
@@ -21,4 +21,4 @@ spec:
         - name: api@internal
           kind: TraefikService
   tls:
-    secretName: local-mantannest-com-tls
+    secretName: traefik-staging-homelab-mantannest-com-tls
