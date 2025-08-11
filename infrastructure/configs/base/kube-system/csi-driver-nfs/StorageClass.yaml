@@ -27,6 +27,9 @@ kind: StorageClass
 metadata:
   name: nfs-staging-nonbackedup-csi
 
+  annotations:
+    storageclass.kubernetes.io/is-default-class: true
+
 provisioner: nfs.csi.k8s.io
 
 parameters:

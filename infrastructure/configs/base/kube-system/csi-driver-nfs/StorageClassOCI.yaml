@@ -5,6 +5,10 @@ kind: StorageClass
 metadata:
   name: nfs-oci-csi
 
+  annotations:
+    storageclass.kubernetes.io/is-default-class: true
+
+
 provisioner: nfs.csi.k8s.io
 
 parameters:
