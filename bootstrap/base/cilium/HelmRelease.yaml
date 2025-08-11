@@ -8,8 +8,8 @@ metadata:
   namespace: kube-system
 
 spec:
-  interval: 1h
-
+  interval: 5m
+  timeout: 10m
   chart:
     spec:
       chart: cilium
@@ -19,14 +19,35 @@ spec:
         name: cilium
         namespace: flux-system
       version: 1.18.0
-
-  releaseName: cilium
-  targetNamespace: kube-system
-
+  install:
+    replace: true
+    crds: CreateReplace
+    createNamespace: true
+    remediation:
+      retries: -1
+  upgrade:
+    remediation:
+      remediateLastFailure: true
+      retries: 3
+      strategy: rollback
+    cleanupOnFail: true
+    crds: CreateReplace
+  test:
+    enable: true
+  rollback:
+    recreate: true
+    force: true
+    cleanupOnFail: true
+  uninstall:
+    keepHistory: false
+  maxHistory: 3
   values:
+    rollOutCiliumPods: true
+    annotateK8sNode: true
     ipam:
       mode: "kubernetes"
     kubeProxyReplacement: true
+    kubeProxyReplacementHealthzBindAddr: 0.0.0.0:10256
     securityContext:
       capabilities:
         ciliumAgent:
@@ -51,6 +72,18 @@ spec:
       hostRoot: "/sys/fs/cgroup"
     k8sServiceHost: "localhost"
     k8sServicePort: 7445
+    k8sClientRateLimit:
+      qps: 50
+      burst: 100
+    l2announcements:
+      enabled: true
+      leaseDuration: 10s
+      leaseRenewDeadline: 5s
+      leaseRetryPeriod: 1s
+    externalIPs:
+      enabled: true
+    operator:
+      replicas: 1
     hubble:
       relay:
         enabled: true
