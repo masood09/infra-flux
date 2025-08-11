@@ -19,6 +19,6 @@ spec:
         name: cnpg
         namespace: flux-system
       version: 0.25.0
-
-  releaseName: cnpg-system
-  targetNamespace: cnpg-system
+  values:
+    crds:
+      create: true
