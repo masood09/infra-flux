@@ -8,7 +8,7 @@ metadata:
 provisioner: nfs.csi.k8s.io
 
 parameters:
-  server: nas-server.local.mantannest.com
+  server: nas-server.homelab.mantannest.com
   share: /mnt/DataStore/Backedup/K8S/homelab-staging
   subDir: /${pvc.metadata.namespace}/${pvc.metadata.name}
 
@@ -33,7 +33,7 @@ metadata:
 provisioner: nfs.csi.k8s.io
 
 parameters:
-  server: nas-server.local.mantannest.com
+  server: nas-server.homelab.mantannest.com
   share: /mnt/DataStore/NonBackedUp/K8S/homelab-staging
   subDir: /${pvc.metadata.namespace}/${pvc.metadata.name}
 
