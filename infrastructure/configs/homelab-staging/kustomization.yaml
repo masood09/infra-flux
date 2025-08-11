@@ -7,7 +7,7 @@ resources:
   - "../../secrets/homelab-staging/cf-token.enc.yaml"
   - "../../secrets/homelab-staging/traefik-dashboard-auth.enc.yaml"
   - "../base/kube-system/"
-  - "../base/networking/"
+  # - "../base/networking/"
 
 patches:
   - path: "./patches/delete-oci-storageclass.yaml"
