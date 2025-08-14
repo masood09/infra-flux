@@ -18,7 +18,7 @@ spec:
         kind: HelmRepository
         name: cnpg
         namespace: flux-system
-      version: 0.25.0
+      version: 0.26.0
   values:
     crds:
       create: true
