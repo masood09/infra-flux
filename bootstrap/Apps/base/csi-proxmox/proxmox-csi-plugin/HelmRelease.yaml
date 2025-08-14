@@ -1,0 +1,41 @@
+---
+# yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/helm.toolkit.fluxcd.io/helmrelease_v2.json
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+
+metadata:
+  name: proxmox-csi-plugin
+  namespace: csi-proxmox
+
+spec:
+  interval: 1h
+
+  chartRef:
+    kind: OCIRepository
+    name: proxmox-csi-plugin
+    namespace: flux-system
+
+  install:
+    remediation:
+      retries: -1
+
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+
+  values:
+    existingConfigSecret: proxmox-csi-config
+    existingConfigSecretKey: config.yaml
+    storageClass:
+      - name: proxmox-csi
+        storage: pve-ceph-pool
+        reclaimPolicy: Delete
+        allowVolumeExpansion: true
+        fstype: xfs
+        cache: writethrough
+        ssd: true
+        annotations:
+          storageclass.kubernetes.io/is-default-class: "true"
+        mountOptions:
+          - noatime

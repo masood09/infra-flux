@@ -38,8 +38,6 @@ spec:
     storageClass:
       create: true
       name: nfs-k8s
-      annotations:
-        storageclass.kubernetes.io/is-default-class: "true"
       parameters:
         server: nas-server.homelab.mantannest.com
         share: /mnt/DataStore/Backedup/K8S/homelab-staging

@@ -13,4 +13,5 @@ resources:
   - "../base/jetstack.yaml"
   - "../base/kube-prometheus-stack.yaml"
   - "../base/prometheus-operator-crds.yaml"
+  - "../base/proxmox-csi-plugin.yaml"
   - "../base/traefik.yaml"
