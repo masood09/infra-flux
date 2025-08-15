@@ -1,0 +1,17 @@
+- op: replace
+  path: /spec/values/storageClass/parameters/server
+  value: mensah.publicsubnet.ocivcn.oraclevcn.com
+
+- op: replace
+  path: /spec/values/storageClass/parameters/share
+  value: /
+
+- op: replace
+  path: /spec/values/storageClass/mountOptions
+  value:
+    - nfsvers=4.2
+
+- op: add
+  path: /spec/values/storageClass/annotations
+  value:
+    storageclass.kubernetes.io/is-default-class: "true"

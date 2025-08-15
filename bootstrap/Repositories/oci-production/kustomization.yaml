@@ -1,0 +1,13 @@
+---
+# yaml-language-server: $schema=https://json.schemastore.org/kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - "../base/bitnami-redis.yaml"
+  - "../base/cloudnative-pg.yaml"
+  - "../base/csi-driver-nfs.yaml"
+  - "../base/jetstack.yaml"
+  - "../base/kube-prometheus-stack.yaml"
+  - "../base/prometheus-operator-crds.yaml"
+  - "../base/traefik.yaml"

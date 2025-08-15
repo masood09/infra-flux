@@ -1,0 +1,25 @@
+---
+# yaml-language-server: $schema=https://json.schemastore.org/kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - "../base/cert-manager/"
+  - "../base/flux/"
+  - "../base/traefik/"
+
+patches:
+  - target:
+      group: cert-manager.io
+      version: v1
+      kind: Certificate
+      name: traefik-dashboard-certificate
+      namespace: traefik
+    path: "./patches/traefik-dashboard-certificate-values.yaml"
+  - target:
+      group: traefik.io
+      version: v1alpha1
+      kind: IngressRoute
+      name: traefik-dashboard
+      namespace: traefik
+    path: "./patches/traefik-dashboard-ingress-values.yaml"

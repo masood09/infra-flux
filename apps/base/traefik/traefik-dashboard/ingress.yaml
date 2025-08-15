@@ -24,4 +24,4 @@ spec:
           kind: TraefikService
 
   tls:
-    secretName: traefik-staging-homelab-mantannest-com-tls
+    secretName: traefik-dashboard-tls

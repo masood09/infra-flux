@@ -1,0 +1,28 @@
+---
+# yaml-language-server: $schema=https://json.schemastore.org/kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - "../base/cert-manager/"
+  - "../base/cnpg-system/"
+  - "../base/flux/alert-discord/"
+  - "../base/flux/alert-github/"
+  - "../base/kube-system/csi-driver-nfs/"
+  - "../base/traefik/"
+
+patches:
+  - target:
+      group: helm.toolkit.fluxcd.io
+      version: v2
+      kind: HelmRelease
+      name: csi-driver-nfs
+      namespace: kube-system
+    path: "./patches/csi-driver-nfs-helmrelease-values.yaml"
+  - target:
+      group: helm.toolkit.fluxcd.io
+      version: v2
+      kind: HelmRelease
+      name: traefik
+      namespace: traefik
+    path: "./patches/traefik-helmrelease-values.yaml"

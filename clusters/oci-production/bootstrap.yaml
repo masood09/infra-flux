@@ -4,20 +4,107 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 
 metadata:
-  name: bootstrap
+  name: bootstrap-namespaces
   namespace: flux-system
 
 spec:
-  interval: 1h
+  interval: 30m
   retryInterval: 1m
   timeout: 5m
+  prune: true
+  wait: true
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./bootstrap/oci-production/
+  path: ./bootstrap/namespace/oci-production/
+
+---
+# yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/kustomize.toolkit.fluxcd.io/kustomization_v1.json
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+
+metadata:
+  name: bootstrap-repositories
+  namespace: flux-system
+
+spec:
+  interval: 30m
+  retryInterval: 1m
+  timeout: 5m
+  prune: true
+  wait: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./bootstrap/Repositories/oci-production/
+
+---
+# yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/kustomize.toolkit.fluxcd.io/kustomization_v1.json
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+
+metadata:
+  name: bootstrap-crds
+  namespace: flux-system
+
+spec:
+  interval: 30m
+  retryInterval: 1m
+  timeout: 5m
+  prune: true
+  wait: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./bootstrap/CRDs/oci-production/
+
+---
+# yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/kustomize.toolkit.fluxcd.io/kustomization_v1.json
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+
+metadata:
+  name: bootstrap-secrets
+  namespace: flux-system
+
+spec:
+  interval: 30m
+  retryInterval: 1m
+  timeout: 10m
+  prune: true
+  wait: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./bootstrap/Secrets/oci-production/
   decryption:
     provider: sops
     secretRef:
       name: sops-age
+  dependsOn:
+    - name: bootstrap-namespaces
+
+---
+# yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/kustomize.toolkit.fluxcd.io/kustomization_v1.json
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+
+metadata:
+  name: bootstrap-apps
+  namespace: flux-system
+
+spec:
+  interval: 30m
+  retryInterval: 1m
+  timeout: 10m
   prune: true
   wait: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./bootstrap/Apps/oci-production/
+  dependsOn:
+    - name: bootstrap-namespaces
+    - name: bootstrap-repositories
+    - name: bootstrap-crds
+    - name: bootstrap-secrets
