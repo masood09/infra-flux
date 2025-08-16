@@ -1,0 +1,9 @@
+- op: replace
+  path: /spec/commonName
+  value: "grafana.oci.mantannest.com"
+
+- op: replace
+  path: /spec/dnsNames
+  value:
+    - "grafana.oci.mantannest.com"
+    - "*.grafana.oci.mantannest.com"

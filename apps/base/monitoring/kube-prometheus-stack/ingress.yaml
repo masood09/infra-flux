@@ -1,19 +1,23 @@
 ---
 apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
+
 metadata:
   name: grafana
   namespace: monitoring
   annotations:
     kubernetes.io/ingress.class: traefik-external
+
 spec:
   entryPoints:
     - websecure
+
   routes:
-    - match: Host(`grafana.local.mantannest.com`)
+    - match: Host(`grafana.staging.homelab.mantannest.com`)
       kind: Rule
       services:
         - name: prometheus-grafana
           port: 80
+
   tls:
-    secretName: local-mantannest-com-tls
+    secretName: grafana-tls

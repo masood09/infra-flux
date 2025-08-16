@@ -6,9 +6,24 @@ kind: Kustomization
 resources:
   - "../base/cert-manager/"
   - "../base/flux/"
+  - "../base/monitoring/"
   - "../base/traefik/"
 
 patches:
+  - target:
+      group: cert-manager.io
+      version: v1
+      kind: Certificate
+      name: grafana-certificate
+      namespace: monitoring
+    path: "./patches/grafana-certificate-values.yaml"
+  - target:
+      group: traefik.io
+      version: v1alpha1
+      kind: IngressRoute
+      name: grafana
+      namespace: monitoring
+    path: "./patches/grafana-ingress-values.yaml"
   - target:
       group: cert-manager.io
       version: v1

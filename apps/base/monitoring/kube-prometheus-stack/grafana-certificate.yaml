@@ -1,0 +1,20 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+
+metadata:
+  name: grafana-certificate
+  namespace: monitoring
+
+spec:
+  secretName: grafana-tls
+
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+
+  commonName: "grafana.staging.homelab.mantannest.com"
+
+  dnsNames:
+    - "grafana.staging.homelab.mantannest.com"
+    - "*.grafana.staging.homelab.mantannest.com"

@@ -4,20 +4,16 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 
 metadata:
-  name: prometheus
+  name: kube-prometheus-stack
   namespace: monitoring
 
 spec:
-  chart:
-    spec:
-      chart: kube-prometheus-stack
-      reconcileStrategy: ChartVersion
-      sourceRef:
-        kind: HelmRepository
-        name: prometheus-community
-        namespace: flux-system
-      version: 76.2.0
   interval: 1h
+
+  chartRef:
+    kind: OCIRepository
+    name: kube-prometheus-stack
+    namespace: flux-system
 
   values:
     fullnameOverride: prometheus # changed
@@ -27,7 +23,6 @@ spec:
         storage:
           volumeClaimTemplate:
             spec:
-              storageClassName: nfs-nonbackedup-csi
               accessModes: ["ReadWriteOnce"]
               resources:
                 requests:
@@ -38,7 +33,6 @@ spec:
       persistence: # changed
         enabled: true
         type: pvc
-        storageClassName: nfs-nonbackedup-csi
         accessModes: ["ReadWriteOnce"]
         size: 10Gi
 
@@ -53,10 +47,6 @@ spec:
                 - __meta_kubernetes_pod_node_name
               targetLabel: kubernetes_node
 
-    kubeEtcd:
-      endpoints: # changed
-        - 10.0.20.111
-
     kubelet:
       serviceMonitor: # changed
         metricRelabelings:
@@ -64,10 +54,6 @@ spec:
             sourceLabels:
               - node
             targetLabel: instance
-
-    kubeScheduler:
-      endpoints: # changed
-        - 10.0.20.111
 
     prometheus:
       prometheusSpec:
@@ -81,7 +67,6 @@ spec:
         storageSpec: # changed
           volumeClaimTemplate:
             spec:
-              storageClassName: nfs-nonbackedup-csi
               accessModes: ["ReadWriteOnce"]
               resources:
                 requests:
