@@ -6,4 +6,4 @@ kind: Kustomization
 resources:
   - "./middleware.yaml"
   - "./ingress.yaml"
-  - "./certificates/"
+  - "./traefik-dashboard-certificate.yaml"
