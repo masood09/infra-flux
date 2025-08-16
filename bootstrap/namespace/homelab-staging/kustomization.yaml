@@ -5,6 +5,7 @@ kind: Kustomization
 
 resources:
   - "../base/cert-manager.yaml"
+  - "../base/cnpg.yaml"
   - "../base/cnpg-system.yaml"
   - "../base/csi-proxmox.yaml"
   - "../base/monitoring.yaml"

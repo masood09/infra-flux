@@ -4,8 +4,4 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - "../base/cert-manager/"
-  - "../base/cnpg/"
-  - "../base/flux/"
-  - "../base/monitoring/"
-  - "../base/traefik/"
+  - "./Cluster.yaml"
