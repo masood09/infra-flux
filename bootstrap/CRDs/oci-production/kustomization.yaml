@@ -5,4 +5,5 @@ kind: Kustomization
 
 resources:
   - "../base/cnpg/"
+  - "../base/external-secrets/"
   - "../base/prometheus-operator-crds/"
