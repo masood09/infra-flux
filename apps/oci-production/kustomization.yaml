@@ -25,6 +25,13 @@ patches:
       namespace: monitoring
     path: "./patches/grafana-ingress-values.yaml"
   - target:
+      group: helm.toolkit.fluxcd.io
+      version: v2
+      kind: HelmRelease
+      name: kube-prometheus-stack
+      namespace: monitoring
+    path: "./patches/kube-prometheus-stack-helm-values.yaml"
+  - target:
       group: cert-manager.io
       version: v1
       kind: Certificate

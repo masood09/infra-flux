@@ -1,0 +1,28 @@
+- op: add
+  path: /spec/values/defaultRules/rules
+  value:
+    etcd: false
+    kubeControllerManager: false
+    kubeSchedulerAlerting: false
+    kubeSchedulerRecording: false
+    kubeProxy: true
+
+- op: add
+  path: /spec/values/kubeEtcd/enabled
+  value: false
+
+- op: replace
+  path: /spec/values/kubeEtcd/endpoints
+  value: []
+
+- op: add
+  path: /spec/values/kubeScheduler/enabled
+  value: false
+
+- op: replace
+  path: /spec/values/kubeScheduler/endpoints
+  value: []
+
+- op: replace
+  path: /spec/values/kubeProxy/enabled
+  value: true

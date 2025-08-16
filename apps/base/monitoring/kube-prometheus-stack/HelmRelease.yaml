@@ -15,8 +15,33 @@ spec:
     name: kube-prometheus-stack
     namespace: flux-system
 
+  valuesFrom:
+    - kind: Secret
+      name: grafana-credentials
+      valuesKey: username
+      targetPath: grafana.adminUser
+    - kind: Secret
+      name: grafana-credentials
+      valuesKey: password
+      targetPath: grafana.adminPassword
+
   values:
     fullnameOverride: prometheus # changed
+
+    defaultRules:
+      rules:
+        kubeProxy: false
+
+    kubeEtcd:
+      endpoints: # changed
+        - 10.0.20.111
+
+    kubeScheduler:
+      endpoints: # changed
+        - 10.0.20.111
+
+    kubeProxy:
+      enabled: false
 
     alertmanager:
       alertmanagerSpec: # changed
