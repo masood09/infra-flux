@@ -5,19 +5,11 @@ kind: Kustomization
 
 resources:
   - "../base/cert-manager/"
-  - "../base/cnpg/"
   - "../base/flux/"
   - "../base/monitoring/"
   - "../base/traefik/"
 
 patches:
-  - target:
-      group: postgresql.cnpg.io
-      version: v1
-      kind: Cluster
-      name: cnpg-cluster
-      namespace: cnpg
-    path: "./patches/cnpg-cluster-values.yaml"
   - target:
       group: cert-manager.io
       version: v1

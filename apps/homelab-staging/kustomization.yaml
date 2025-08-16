@@ -5,7 +5,6 @@ kind: Kustomization
 
 resources:
   - "../base/cert-manager/"
-  - "../base/cnpg/"
   - "../base/flux/"
   - "../base/monitoring/"
   - "../base/traefik/"
