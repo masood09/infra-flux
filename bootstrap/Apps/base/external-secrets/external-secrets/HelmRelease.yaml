@@ -1,0 +1,34 @@
+---
+# yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/helm.toolkit.fluxcd.io/helmrelease_v2.json
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+
+metadata:
+  name: external-secrets
+  namespace: external-secrets
+
+spec:
+  interval: 1h
+
+  chart:
+    spec:
+      chart: external-secrets
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: external-secrets
+        namespace: flux-system
+      version: 0.19.2
+
+  install:
+    remediation:
+      retries: -1
+
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+
+  values:
+    serviceMonitor:
+      enabled: true
