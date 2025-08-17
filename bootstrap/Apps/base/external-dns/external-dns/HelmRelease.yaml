@@ -30,6 +30,8 @@ spec:
       retries: 3
 
   values:
+    extraArgs:
+      - "--exclude-target-net=172.168.0.0/24"
     serviceMonitor:
       enabled: true
     provider:

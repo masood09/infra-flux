@@ -12,4 +12,3 @@
   value:
      oci.oraclecloud.com/load-balancer-type: nlb
      external-dns.alpha.kubernetes.io/hostname: proxy.oci.mantannest.com
-     external-dns.alpha.kubernetes.io/target: 40.233.96.81
