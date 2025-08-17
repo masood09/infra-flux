@@ -8,7 +8,6 @@ resources:
   - "../base/cnpg-system/"
   - "../base/external-secrets/"
   - "../base/flux/alert-discord/"
-  - "../base/flux/alert-github/"
   - "../base/kube-system/csi-driver-nfs/"
   - "../base/traefik/"
 

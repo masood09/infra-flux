@@ -7,4 +7,3 @@ resources:
   - "./flux-operator/"
   - "./flux-instance/"
   - "./alert-discord/"
-  - "./alert-github/"
