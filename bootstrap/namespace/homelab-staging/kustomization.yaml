@@ -7,5 +7,6 @@ resources:
   - "../base/cert-manager.yaml"
   - "../base/cnpg-system.yaml"
   - "../base/csi-proxmox.yaml"
+  - "../base/external-dns.yaml"
   - "../base/monitoring.yaml"
   - "../base/traefik.yaml"

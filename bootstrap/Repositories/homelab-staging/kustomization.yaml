@@ -8,6 +8,7 @@ resources:
   - "../base/cilium.yaml"
   - "../base/cloudnative-pg.yaml"
   - "../base/csi-driver-nfs.yaml"
+  - "../base/external-dns.yaml"
   - "../base/flux-instance.yaml"
   - "../base/flux-operator.yaml"
   - "../base/jetstack.yaml"

@@ -6,6 +6,7 @@ kind: Kustomization
 resources:
   - "../base/cert-manager.yaml"
   - "../base/cnpg-system.yaml"
+  - "../base/external-dns.yaml"
   - "../base/external-secrets.yaml"
   - "../base/monitoring.yaml"
   - "../base/traefik.yaml"
