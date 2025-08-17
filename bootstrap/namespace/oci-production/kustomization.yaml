@@ -8,5 +8,4 @@ resources:
   - "../base/cnpg-system.yaml"
   - "../base/external-secrets.yaml"
   - "../base/monitoring.yaml"
-  - "../base/redis.yaml"
   - "../base/traefik.yaml"
