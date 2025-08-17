@@ -80,7 +80,6 @@ spec:
       type: LoadBalancer
       annotations:
         io.cilium/lb-ipam-ips: 10.0.20.160
-        external-dns.alpha.kubernetes.io/hostname: proxy.staging.homelab.mantannest.com
       labels: {}
       loadBalancerSourceRanges: []
       externalIPs: []

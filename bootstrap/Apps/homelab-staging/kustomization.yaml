@@ -7,7 +7,6 @@ resources:
   - "../base/cert-manager/"
   - "../base/cnpg-system/"
   - "../base/csi-proxmox/"
-  - "../base/external-dns/"
   - "../base/flux/"
   - "../base/kube-system/"
   - "../base/traefik/"

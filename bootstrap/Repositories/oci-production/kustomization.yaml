@@ -7,7 +7,6 @@ resources:
   - "../base/bitnami-redis.yaml"
   - "../base/cloudnative-pg.yaml"
   - "../base/csi-driver-nfs.yaml"
-  - "../base/external-dns.yaml"
   - "../base/external-secrets.yaml"
   - "../base/jetstack.yaml"
   - "../base/kube-prometheus-stack.yaml"

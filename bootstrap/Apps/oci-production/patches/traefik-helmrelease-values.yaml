@@ -11,4 +11,3 @@
   path: /spec/values/service/annotations
   value:
      oci.oraclecloud.com/load-balancer-type: nlb
-     external-dns.alpha.kubernetes.io/hostname: proxy.oci.mantannest.com

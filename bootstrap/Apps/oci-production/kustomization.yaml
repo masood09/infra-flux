@@ -6,7 +6,6 @@ kind: Kustomization
 resources:
   - "../base/cert-manager/"
   - "../base/cnpg-system/"
-  - "../base/external-dns/"
   - "../base/external-secrets/"
   - "../base/flux/alert-discord/"
   - "../base/kube-system/csi-driver-nfs/"
